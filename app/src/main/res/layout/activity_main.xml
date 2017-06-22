@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".ui.MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="26px"
+        android:background="#ffffffff"
+        android:layout_height="86px">
+        
+        <ImageView
+            android:id="@+id/am_iv_add"
+            android:layout_marginLeft="276px"
+            android:layout_marginTop="26px"
+            android:layout_width="34px"
+            android:src="@mipmap/ic_ad"
+            android:layout_height="34px" />
+
+        <TextView
+            android:text="新增旅客"
+            android:layout_toRightOf="@id/am_iv_add"
+            android:layout_marginLeft="26px"
+            android:layout_centerVertical="true"
+            android:textColor="#1fb6c4"
+            android:layout_width="wrap_content"
+            android:textSize="32px"
+            android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>
