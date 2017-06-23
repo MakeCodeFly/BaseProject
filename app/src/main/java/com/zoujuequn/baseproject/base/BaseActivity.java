@@ -14,7 +14,7 @@ import com.zhy.autolayout.AutoLayoutActivity;
 
 /**
  * <pre>
- *     author: Zou Juequn
+ *     author: MakeCodeFly
  *     desc  : BaseActivity类
  *     email:15695947865@139.com
  * </pre>

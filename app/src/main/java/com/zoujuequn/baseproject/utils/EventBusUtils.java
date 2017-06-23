@@ -5,7 +5,7 @@ import org.greenrobot.eventbus.Subscribe;
 
 /**
  * <pre>
- *     author: Zou Juequn
+ *     author: MakeCodeFly
  *     desc  : EventBusUtils类
  *     email:15695947865@139.com
  * </pre>

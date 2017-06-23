@@ -7,7 +7,7 @@ import com.zoujuequn.baseproject.BuildConfig;
 
 /**
  * <pre>
- *     author: Zou Juequn
+ *     author: MakeCodeFly
  *     desc  : LogUtils类
  *     email:15695947865@139.com
  * </pre>

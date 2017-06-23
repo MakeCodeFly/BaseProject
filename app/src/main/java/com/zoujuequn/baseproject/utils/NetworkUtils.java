@@ -6,7 +6,7 @@ import android.net.NetworkInfo;
 
 /**
  * <pre>
- *     author: Zou Juequn
+ *     author: MakeCodeFly
  *     desc  : NetworkUtils类
  *     email:15695947865@139.com
  * </pre>

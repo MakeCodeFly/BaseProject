@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Map;
 /**
  * <pre>
- *     author: Zou Juequn
+ *     author: MakeCodeFly
  *     desc  : 6.0权限申请帮助类
  *     email:15695947865@139.com
  * </pre>

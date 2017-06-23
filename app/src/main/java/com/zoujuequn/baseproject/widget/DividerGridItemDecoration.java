@@ -13,9 +13,11 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
 /**
- * 
- * @author zhy
- * 
+ * <pre>
+ *     author: MakeCodeFly
+ *     desc  : DividerGridItemDecoration
+ *     email:15695947865@139.com
+ * </pre>
  */
 public class DividerGridItemDecoration extends RecyclerView.ItemDecoration
 {

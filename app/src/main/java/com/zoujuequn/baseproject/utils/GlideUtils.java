@@ -14,7 +14,7 @@ import com.zoujuequn.baseproject.R;
 
 /**
  * <pre>
- *     author: Zou Juequn
+ *     author: MakeCodeFly
  *     desc  : GlideUtils类
  *     email:15695947865@139.com
  * </pre>

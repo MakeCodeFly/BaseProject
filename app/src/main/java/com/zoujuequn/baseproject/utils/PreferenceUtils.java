@@ -6,7 +6,7 @@ import android.content.SharedPreferences.Editor;
 
 /**
  * <pre>
- *     author: Zou Juequn
+ *     author: MakeCodeFly
  *     desc  : PreferenceUtil类
  *     email:15695947865@139.com
  * </pre>

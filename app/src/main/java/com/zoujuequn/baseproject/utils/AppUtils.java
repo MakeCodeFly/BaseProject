@@ -9,7 +9,7 @@ import android.view.WindowManager;
 
 /**
  * <pre>
- *     author: Zou Juequn
+ *     author: MakeCodeFly
  *     desc  : AppUtils类
  *     email:15695947865@139.com
  * </pre>

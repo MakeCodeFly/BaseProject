@@ -7,7 +7,7 @@ import java.lang.ref.WeakReference;
 
 /**
  * <pre>
- *     author: Zou Juequn
+ *     author: MakeCodeFly
  *     desc  : HandlerUtils类
  *     email:15695947865@139.com
  * </pre>

@@ -3,8 +3,11 @@ package com.zoujuequn.baseproject.mvp.presenter;
 import com.zoujuequn.baseproject.mvp.contract.ExampleContract;
 
 /**
- * Created by tangzelai on 2017/6/22.
- * com.zoujuequn.baseproject.mvp.presenter
+ * <pre>
+ *     author: MakeCodeFly
+ *     desc  : 事例Presenter
+ *     email:15695947865@139.com
+ * </pre>
  */
 public class ExamplePresenter implements ExampleContract.Presenter {
     @Override

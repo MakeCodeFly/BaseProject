@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 
 /**
  * <pre>
- *     author: Zou Juequn
+ *     author: MakeCodeFly
  *     desc  : BaseFragment类
  *     email:15695947865@139.com
  * </pre>
