@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@android:color/white"
     tools:context=".ui.MainActivity">
 
 
@@ -33,5 +35,21 @@
 
 
     </RelativeLayout>
+
+
+    <com.zoujuequn.baseproject.widget.MakeCodeFlyButton
+        android:layout_margin="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+        app:radius="5dp"
+        app:round="true"
+        app:normalStrokeColor="#000999"
+        app:normalBackgroundColor="@color/colorAccent"
+        app:pressedBackgroundColor="@color/colorPrimary"
+        app:strokeDashWidth="2dp"
+
+        />
 
 </LinearLayout>
