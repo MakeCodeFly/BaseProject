@@ -31,8 +31,4 @@ public class DemoFragment extends BaseFragment {
 
     }
 
-    @Override
-    protected void onUserVisible() {
-
-    }
 }

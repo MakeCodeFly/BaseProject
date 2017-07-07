@@ -43,7 +43,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         if (mContentView == null) {
             setContentView(bindLayout());
             initView(mContentView);
-            processLogic(savedInstanceState);
+//            processLogic(savedInstanceState);
         } else {
             ViewGroup parent = (ViewGroup) mContentView.getParent();
             if (parent != null) {
@@ -123,14 +123,14 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         if (isVisibleToUser) {
-            onUserVisible();
+//            onUserVisible();
         }
     }
 
     /**
      * 当fragment对用户可见时，会调用该方法，可在该方法中懒加载网络数据
      */
-    protected abstract void onUserVisible();
+//    protected abstract void onUserVisible();
 
 
 }

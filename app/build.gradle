@@ -47,6 +47,7 @@ dependencies {
     compile 'com.zhy:autolayout:1.4.5'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.18'
     compile 'com.android.support:recyclerview-v7:25.3.0'
+    compile 'com.android.support:design:25.3.1'
 }
 
 apply from: 'tinkerpatch.gradle'
