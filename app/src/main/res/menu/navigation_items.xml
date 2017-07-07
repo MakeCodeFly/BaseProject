@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_home"
+        android:icon="@mipmap/ic_homepage_default"
+        android:title="@string/action_home" />
+    <item
+        android:id="@+id/action_type"
+        android:icon="@mipmap/ic_shop_default"
+        android:title="@string/action_type"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_cart"
+        android:icon="@mipmap/ic_find_default"
+        android:title="@string/action_cart"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_mine"
+        android:icon="@mipmap/ic_mine_default"
+        android:title="@string/action_mine"
+        app:showAsAction="ifRoom" />
+</menu>
