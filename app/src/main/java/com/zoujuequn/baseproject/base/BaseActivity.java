@@ -4,12 +4,14 @@ package com.zoujuequn.baseproject.base;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 
 import com.zhy.autolayout.AutoLayoutActivity;
+import com.zoujuequn.baseproject.R;
 
 
 /**
@@ -22,19 +24,30 @@ import com.zhy.autolayout.AutoLayoutActivity;
 
 public abstract class BaseActivity extends AutoLayoutActivity implements View.OnClickListener {
     /** 当前Activity渲染的视图View **/
-    private View mContextView = null;
+    private View mContentView = null;
     long lastClick = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-            mContextView = LayoutInflater.from(this).inflate(bindLayout(), null);
-            setContentView(mContextView);
-            initView(mContextView);
+            mContentView = LayoutInflater.from(this).inflate(bindLayout(), null);
+            setContentView(mContentView);
+            initView(mContentView);
             doBusiness(this);
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * 查找View
+     *
+     * @param id   控件的id
+     * @param <VT> View类型
+     * @return
+     */
+    protected <VT extends View> VT getViewById(@IdRes int id) {
+        return (VT) mContentView.findViewById(id);
     }
 
 
