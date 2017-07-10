@@ -9,7 +9,13 @@ import com.tinkerpatch.sdk.TinkerPatch;
 import com.tinkerpatch.sdk.loader.TinkerPatchApplicationLike;
 import com.zoujuequn.baseproject.BuildConfig;
 
-
+/**
+ * <pre>
+ *     author: MakeCodeFly
+ *     desc  : BaseApplication类
+ *     email:15695947865@139.com
+ * </pre>
+ */
 public class BaseApplication extends Application {
 
     private ApplicationLike tinkerApplicationLike;

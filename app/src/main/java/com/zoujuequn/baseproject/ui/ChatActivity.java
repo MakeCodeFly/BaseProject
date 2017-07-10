@@ -15,7 +15,12 @@ import com.zoujuequn.baseproject.model.DataEngine;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * <pre>
+ *     author: MakeCodeFly
+ *     email:15695947865@139.com
+ * </pre>
+ */
 public class ChatActivity extends BaseActivity {
 
 

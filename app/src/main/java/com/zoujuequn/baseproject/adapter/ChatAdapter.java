@@ -9,10 +9,16 @@ import com.zoujuequn.baseproject.model.ChatModel;
 
 import java.util.List;
 
+
 /**
- * Created by tangzelai on 2017/7/7.
- * com.zoujuequn.baseproject.adapter
+ * <pre>
+ *     author: MakeCodeFly
+ *     desc  : ChatAdapter
+ *     email:15695947865@139.com
+ * </pre>
  */
+
+
 public class ChatAdapter extends BaseQuickAdapter<ChatModel,BaseViewHolder> {
 
     public ChatAdapter(@LayoutRes int layoutResId, @Nullable List<ChatModel> data) {

@@ -21,7 +21,12 @@ import com.zoujuequn.baseproject.helper.NavHelper;
 import com.zoujuequn.baseproject.utils.IntentUtils;
 import com.zoujuequn.baseproject.utils.MyPermissionUtils;
 import com.zoujuequn.baseproject.widget.MakeCodeFlyButton;
-
+/**
+ * <pre>
+ *     author: MakeCodeFly
+ *     email:15695947865@139.com
+ * </pre>
+ */
 public class MainActivity extends BaseActivity  implements BottomNavigationView.OnNavigationItemSelectedListener, NavHelper.OnTabChangedListener<Integer>  {
 
 //    private MakeCodeFlyButton mBtnChat;

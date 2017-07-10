@@ -7,10 +7,16 @@ import android.view.View;
 import com.zoujuequn.baseproject.R;
 import com.zoujuequn.baseproject.base.BaseFragment;
 
+/**
+ * <pre>
+ *     author: MakeCodeFly
+ *     email:15695947865@139.com
+ * </pre>
+ */
 public class DemoFragment extends BaseFragment {
-    
+
     private RecyclerView mRecyclerView;
-    
+
     @Override
     public int bindLayout() {
         return R.layout.fragment_recyclerview;

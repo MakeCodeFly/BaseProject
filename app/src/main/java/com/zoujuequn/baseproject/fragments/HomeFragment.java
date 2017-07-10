@@ -7,7 +7,10 @@ import com.zoujuequn.baseproject.R;
 import com.zoujuequn.baseproject.base.BaseFragment;
 
 /**
- * Created by Administrator on 2017/7/7.
+ * <pre>
+ *     author: MakeCodeFly
+ *     email:15695947865@139.com
+ * </pre>
  */
 public class HomeFragment extends BaseFragment {
     @Override

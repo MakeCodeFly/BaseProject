@@ -8,8 +8,10 @@ import android.util.SparseArray;
 
 
 /**
- * 解决对Fragment的调度与重用问题，
- * 达到最优的Fragment切换
+ * <pre>
+ *     author: MakeCodeFly
+ *     email:15695947865@139.com
+ * </pre>
  */
 public class NavHelper<T> {
     // 所有的Tab集合

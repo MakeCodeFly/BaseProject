@@ -5,7 +5,12 @@ import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 
 import java.lang.reflect.Field;
-
+/**
+ * <pre>
+ *     author: MakeCodeFly
+ *     email:15695947865@139.com
+ * </pre>
+ */
 
 public class BottomNavigationViewHelper {
     public static void disableShiftMode(BottomNavigationView view) {

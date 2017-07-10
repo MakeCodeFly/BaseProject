@@ -16,6 +16,14 @@
 
 package com.zoujuequn.baseproject.base;
 
+/**
+ * <pre>
+ *     author: MakeCodeFly
+ *     email:15695947865@139.com
+ * </pre>
+ */
+
+
 public interface BasePresenter {
 
 }

@@ -18,6 +18,14 @@ package com.zoujuequn.baseproject.base;
 
 import android.app.Activity;
 
+
+/**
+ * <pre>
+ *     author: MakeCodeFly
+ *     email:15695947865@139.com
+ * </pre>
+ */
+
 public interface BaseView<T> {
 
     void setPresenter(T presenter);

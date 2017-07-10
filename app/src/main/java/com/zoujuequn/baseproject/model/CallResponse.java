@@ -8,6 +8,13 @@ import com.alibaba.fastjson.annotation.JSONField;
 
 import java.util.List;
 
+/**
+ * <pre>
+ *     author: MakeCodeFly
+ *     email:15695947865@139.com
+ * </pre>
+ */
+
 public class CallResponse {
 
     private int status;
