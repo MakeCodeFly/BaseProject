@@ -5,9 +5,9 @@
     android:orientation="vertical">
 
 
-    <TextView
-        android:text="ClassifyFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <com.zoujuequn.baseproject.widget.ProgressWebView
+        android:id="@+id/baseweb_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

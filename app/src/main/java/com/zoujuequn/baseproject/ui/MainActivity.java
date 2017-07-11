@@ -18,7 +18,9 @@ import com.zoujuequn.baseproject.fragments.MineFragment;
 import com.zoujuequn.baseproject.fragments.ShopCarFragment;
 import com.zoujuequn.baseproject.helper.BottomNavigationViewHelper;
 import com.zoujuequn.baseproject.helper.NavHelper;
+import com.zoujuequn.baseproject.utils.AppUtils;
 import com.zoujuequn.baseproject.utils.IntentUtils;
+import com.zoujuequn.baseproject.utils.LogUtils;
 import com.zoujuequn.baseproject.utils.MyPermissionUtils;
 import com.zoujuequn.baseproject.widget.MakeCodeFlyButton;
 /**
