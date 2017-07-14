@@ -1,5 +1,7 @@
 package com.zoujuequn.baseproject.config;
 
+import android.text.TextUtils;
+
 /**
  * <pre>
  *     author: MakeCodeFly
@@ -8,5 +10,8 @@ package com.zoujuequn.baseproject.config;
  * </pre>
  */
 public interface URLConfig {
-
+    String URL_BASE = "http://www.bq005.com";
+    String URL_GETINDEXBANNERLIST = URL_BASE + "/api/index/getIndexBannerList";
+    String URL_GETINDEXGOODSTYPELIST = URL_BASE + "/api/index/getIndexGoodsTypeList";
+    String URL_GETINDEXRECOMMENTLIST = URL_BASE + "/api/index/getIndexRecommentList";
 }

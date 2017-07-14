@@ -2,7 +2,6 @@ package com.zoujuequn.baseproject.adapter;
 
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.view.View;
 

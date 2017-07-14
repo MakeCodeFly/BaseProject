@@ -1,29 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_EEEEEE"
     android:orientation="vertical">
 
-
-    <TextView
-        android:text="HomeFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-
-    <com.zoujuequn.baseproject.widget.MakeCodeFlyButton
-        android:id="@+id/am_chat"
-        android:layout_margin="@dimen/dp_10"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:radius="5dp"
-        app:round="true"
-        app:normalStrokeColor="#000999"
-        app:normalBackgroundColor="@color/colorAccent"
-        app:pressedBackgroundColor="@color/colorPrimary"
-        app:strokeDashWidth="2dp"
+        android:background="@color/color_EF6C62"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_10">
 
-        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/dp_4"
+            android:drawableRight="@mipmap/ic_rectangle_default"
+            android:gravity="center_vertical"
+            android:text="龙岗区"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableRight="@mipmap/ic_search"
+                android:text="搜索商品商家"
+                android:textColor="@color/white" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="@dimen/dp_4"
+                android:background="@color/white" />
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_scanner" />
+
+    </LinearLayout>
+
+    <com.zoujuequn.baseproject.widget.CustomScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.bigkoo.convenientbanner.ConvenientBanner
+                android:id="@+id/fh_convenientbanner"
+                android:layout_width="match_parent"
+                android:layout_height="337px"
+                android:descendantFocusability="blocksDescendants"
+                app:canLoop="true" />
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/fh_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white" />
+
+            <View
+                style="@style/line_style"
+                android:layout_marginTop="@dimen/dp_10" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <com.flyco.tablayout.SlidingTabLayout xmlns:tl="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/fh_slidingtablayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/white"
+                    tl:tl_indicator_color="@color/color_EF6C62"
+                    tl:tl_indicator_height="@dimen/dp_2"
+                    tl:tl_indicator_width_equal_title="false"
+                    tl:tl_tab_padding="@dimen/dp_30"
+                    tl:tl_tab_space_equal="true"
+                    tl:tl_textSelectColor="@color/color_EF6C62"
+                    tl:tl_textUnselectColor="#606060"
+                    tl:tl_textsize="@dimen/sp_16" />
+
+
+                <View style="@style/line_style" />
+
+
+                <com.zoujuequn.baseproject.widget.CustomViewPager
+                    android:id="@+id/fh_viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </com.zoujuequn.baseproject.widget.CustomScrollView>
 
 </LinearLayout>

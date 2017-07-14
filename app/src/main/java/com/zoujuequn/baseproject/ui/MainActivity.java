@@ -8,7 +8,6 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 import com.zoujuequn.baseproject.R;
 import com.zoujuequn.baseproject.base.BaseActivity;
@@ -18,11 +17,7 @@ import com.zoujuequn.baseproject.fragments.MineFragment;
 import com.zoujuequn.baseproject.fragments.ShopCarFragment;
 import com.zoujuequn.baseproject.helper.BottomNavigationViewHelper;
 import com.zoujuequn.baseproject.helper.NavHelper;
-import com.zoujuequn.baseproject.utils.AppUtils;
 import com.zoujuequn.baseproject.utils.IntentUtils;
-import com.zoujuequn.baseproject.utils.LogUtils;
-import com.zoujuequn.baseproject.utils.MyPermissionUtils;
-import com.zoujuequn.baseproject.widget.MakeCodeFlyButton;
 /**
  * <pre>
  *     author: MakeCodeFly

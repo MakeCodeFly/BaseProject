@@ -17,6 +17,7 @@ import android.view.View;
  *     author: MakeCodeFly
  *     desc  : DividerGridItemDecoration
  *     email:15695947865@139.com
+ *     http://download.csdn.net/download/lmj623565791/8598329
  * </pre>
  */
 public class DividerGridItemDecoration extends RecyclerView.ItemDecoration

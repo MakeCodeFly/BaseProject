@@ -14,7 +14,7 @@ android {
     }
     buildTypes {
         release {
-            buildConfigField "boolean", "LOG_DEBUG", "false"
+            buildConfigField "boolean", "LOG_DEBUG", "true"
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -48,6 +48,12 @@ dependencies {
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.18'
     compile 'com.android.support:recyclerview-v7:25.3.0'
     compile 'com.android.support:design:25.3.1'
+    //TabLayout
+    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+    //轮播
+    compile 'com.bigkoo:convenientbanner:2.0.5'
+    //Okhttp
+    compile 'com.zhy:okhttputils:2.6.2'
 }
 
 apply from: 'tinkerpatch.gradle'

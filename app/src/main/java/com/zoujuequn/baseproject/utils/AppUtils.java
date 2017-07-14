@@ -6,6 +6,8 @@ import android.content.pm.PackageManager;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 
+import java.text.DecimalFormat;
+
 
 /**
  * <pre>
@@ -127,6 +129,22 @@ public class AppUtils {
     public static int px2sp(float pxValue, Context context) {
         final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
         return (int) (pxValue / fontScale + 0.5f);
+    }
+
+
+
+    public static int returnWidth(int widthPx, Context context) {
+        return widthPx * getScreenWidth(context) / 1080;
+
+    }
+
+    public static int returnHeight(int heightPx, Context context) {
+        return heightPx * getScreenHeight(context) / 1920;
+    }
+
+    public static String keepADemicalOfDouble(double num) {
+        //使用0.00不足位补0，#.##仅保留有效位
+        return new DecimalFormat("0.00").format(num);
     }
 
 

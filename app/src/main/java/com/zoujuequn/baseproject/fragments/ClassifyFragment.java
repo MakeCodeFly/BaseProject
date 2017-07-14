@@ -6,7 +6,9 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.zoujuequn.baseproject.R;
+import com.zoujuequn.baseproject.base.BaseActivity;
 import com.zoujuequn.baseproject.base.BaseFragment;
+import com.zoujuequn.baseproject.utils.LogUtils;
 import com.zoujuequn.baseproject.widget.ProgressWebView;
 
 /**
@@ -18,6 +20,15 @@ import com.zoujuequn.baseproject.widget.ProgressWebView;
 public class ClassifyFragment extends BaseFragment {
 
     private ProgressWebView mWebView;
+
+    public static ClassifyFragment newInstance(String recomment_type) {
+        ClassifyFragment recommentListFragment = new ClassifyFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString(BaseActivity.TAG,recomment_type);
+        recommentListFragment.setArguments(bundle);
+        return recommentListFragment;
+    }
+
     @Override
     public int bindLayout() {
         return R.layout.fragment_classify;

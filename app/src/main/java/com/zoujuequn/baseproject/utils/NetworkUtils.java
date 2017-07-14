@@ -4,6 +4,11 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.request.RequestCall;
+
+import java.util.Map;
+
 /**
  * <pre>
  *     author: MakeCodeFly
@@ -12,6 +17,11 @@ import android.net.NetworkInfo;
  * </pre>
  */
 public class NetworkUtils {
+
+
+    public static RequestCall onSuccessResponse(CharSequence url, Map<String,String> paramsMap){
+        return OkHttpUtils.post().params(paramsMap).url((String) url).build();
+    }
 
     private NetworkUtils() {
         throw new UnsupportedOperationException("u can't instantiate me...");

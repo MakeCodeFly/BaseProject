@@ -2,16 +2,14 @@ package com.zoujuequn.baseproject.base;
 
 
 import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.WindowManager;
 
 import com.zhy.autolayout.AutoLayoutActivity;
-import com.zoujuequn.baseproject.R;
+
+import org.greenrobot.eventbus.Subscribe;
 
 
 /**
@@ -23,6 +21,12 @@ import com.zoujuequn.baseproject.R;
  */
 
 public abstract class BaseActivity extends AutoLayoutActivity implements View.OnClickListener {
+    public static String TAG = "BaseProject";
+    public static String EVENT_REFRESH = "event_refresh";
+    public static String EVENT_REFRESH_DONE = "event_refresh_done";
+    public static String EVENT_LOAD_MORE = "event_load_more";
+    public static String EVENT_LOAD_MORE_DONE = "event_load_more_done";
+
     /** 当前Activity渲染的视图View **/
     private View mContentView = null;
     long lastClick = 0;
@@ -104,4 +108,7 @@ public abstract class BaseActivity extends AutoLayoutActivity implements View.On
         lastClick = System.currentTimeMillis();
         return true;
     }
+
+
+
 }

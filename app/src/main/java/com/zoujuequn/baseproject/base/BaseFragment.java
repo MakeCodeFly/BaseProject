@@ -1,8 +1,6 @@
 package com.zoujuequn.baseproject.base;
 
 
-
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -11,6 +9,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import org.greenrobot.eventbus.Subscribe;
 
 /**
  * <pre>
@@ -24,7 +24,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     private View mContentView = null;
     private long lastClick = 0;
 
-    private Context mContext;
+    protected Context mContext;
 
     @Override
     public void onAttach(Context context) {
@@ -131,6 +131,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
      * 当fragment对用户可见时，会调用该方法，可在该方法中懒加载网络数据
      */
 //    protected abstract void onUserVisible();
+
 
 
 }
