@@ -57,34 +57,17 @@
 
     </LinearLayout>
 
-    <com.zoujuequn.baseproject.widget.CustomScrollView
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swiperefreshlayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fillViewport="true"
-        android:scrollbars="none">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <com.zoujuequn.baseproject.widget.CustomScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <com.bigkoo.convenientbanner.ConvenientBanner
-                android:id="@+id/fh_convenientbanner"
-                android:layout_width="match_parent"
-                android:layout_height="337px"
-                android:descendantFocusability="blocksDescendants"
-                app:canLoop="true" />
-
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/fh_recyclerview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white" />
-
-            <View
-                style="@style/line_style"
-                android:layout_marginTop="@dimen/dp_10" />
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -92,33 +75,60 @@
                 android:orientation="vertical">
 
 
-                <com.flyco.tablayout.SlidingTabLayout xmlns:tl="http://schemas.android.com/apk/res-auto"
+                <com.bigkoo.convenientbanner.ConvenientBanner
+                    android:id="@+id/fh_convenientbanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="337px"
+                    android:descendantFocusability="blocksDescendants"
+                    app:canLoop="true" />
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/fh_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" />
+
+                <TextView
+                    android:id="@+id/txt_cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="取消"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <View
+                    style="@style/line_style"
+                    android:layout_marginTop="@dimen/dp_10" />
+
+
+                <android.support.design.widget.TabLayout
                     android:id="@+id/fh_slidingtablayout"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:background="@color/white"
-                    tl:tl_indicator_color="@color/color_EF6C62"
-                    tl:tl_indicator_height="@dimen/dp_2"
-                    tl:tl_indicator_width_equal_title="false"
-                    tl:tl_tab_padding="@dimen/dp_30"
-                    tl:tl_tab_space_equal="true"
-                    tl:tl_textSelectColor="@color/color_EF6C62"
-                    tl:tl_textUnselectColor="#606060"
-                    tl:tl_textsize="@dimen/sp_16" />
+                    app:tabIndicatorColor="@color/color_EF6C62"
+                    app:tabSelectedTextColor="@color/color_EF6C62" />
 
 
                 <View style="@style/line_style" />
 
 
-                <com.zoujuequn.baseproject.widget.CustomViewPager
-                    android:id="@+id/fh_viewpager"
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/fh_recyclerview2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content">
+
+                </android.support.v7.widget.RecyclerView>
+
             </LinearLayout>
 
-        </LinearLayout>
 
+        </com.zoujuequn.baseproject.widget.CustomScrollView>
 
-    </com.zoujuequn.baseproject.widget.CustomScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
 
 </LinearLayout>

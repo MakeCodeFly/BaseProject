@@ -11,4 +11,39 @@
         android:descendantFocusability="blocksDescendants"
         app:canLoop="true" />
 
+
+    <View style="@style/line_style" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <View
+        style="@style/line_style"
+        android:layout_marginTop="@dimen/dp_10" />
+
+    <com.flyco.tablayout.SlidingTabLayout xmlns:tl="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/slidingtablayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        tl:tl_indicator_color="@color/color_EF6C62"
+        tl:tl_indicator_height="@dimen/dp_2"
+        tl:tl_indicator_width_equal_title="false"
+        tl:tl_tab_padding="@dimen/dp_30"
+        tl:tl_tab_space_equal="true"
+        tl:tl_textSelectColor="@color/color_EF6C62"
+        tl:tl_textUnselectColor="#606060"
+        tl:tl_textsize="@dimen/sp_16" />
+
+
+    <View style="@style/line_style" />
+
+    <com.zoujuequn.baseproject.widget.CustomViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
 </LinearLayout>

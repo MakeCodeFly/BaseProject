@@ -54,6 +54,7 @@ dependencies {
     compile 'com.bigkoo:convenientbanner:2.0.5'
     //Okhttp
     compile 'com.zhy:okhttputils:2.6.2'
+    compile 'com.orhanobut:logger:2.1.1'
 }
 
 apply from: 'tinkerpatch.gradle'

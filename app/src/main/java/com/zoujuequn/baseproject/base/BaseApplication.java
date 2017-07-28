@@ -18,6 +18,8 @@ import com.zoujuequn.baseproject.BuildConfig;
  */
 public class BaseApplication extends Application {
 
+    private static BaseApplication instance;
+
     private ApplicationLike tinkerApplicationLike;
     public BaseApplication() {
 
@@ -27,6 +29,7 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        instance = this;
         //初始化热修复参数
         initTinkerPatch();
     }
@@ -61,4 +64,11 @@ public class BaseApplication extends Application {
         MultiDex.install(base);
     }
 
+    public static BaseApplication getInstance() {
+        return instance;
+    }
+
+    public static void setInstance(BaseApplication instance) {
+        BaseApplication.instance = instance;
+    }
 }
