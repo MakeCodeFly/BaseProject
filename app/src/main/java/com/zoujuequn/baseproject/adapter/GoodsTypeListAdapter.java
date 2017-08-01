@@ -1,5 +1,6 @@
 package com.zoujuequn.baseproject.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
@@ -39,7 +40,7 @@ public class GoodsTypeListAdapter extends BaseQuickAdapter<GoodsTypeModel, BaseV
     protected void convert(BaseViewHolder helper, GoodsTypeModel item) {
         helper.setText(R.id.igtl_tv_name,item.getOst_name());
         ImageView imageView = helper.getView(R.id.igtl_iv_imageview);
-        GlideUtils.loadCustomerViewHolder(mContext,item.getOst_pic(),imageView);
+        GlideUtils.loadCustomerViewHolder((Activity) mContext,item.getOst_pic(),imageView);
       /*  ViewGroup.LayoutParams layoutParams = imageView.getLayoutParams();
         layoutParams.height = AppUtils.returnWidth(248,mContext);*/
     }

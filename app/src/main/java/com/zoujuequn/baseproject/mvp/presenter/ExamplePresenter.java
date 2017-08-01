@@ -10,6 +10,8 @@ import com.zoujuequn.baseproject.base.BaseActivity;
 import com.zoujuequn.baseproject.base.BaseApplication;
 import com.zoujuequn.baseproject.config.URLConfig;
 import com.zoujuequn.baseproject.model.CallResponse;
+import com.zoujuequn.baseproject.mvp.basepresenter.BaseContract;
+import com.zoujuequn.baseproject.mvp.basepresenter.BasePresenter;
 import com.zoujuequn.baseproject.mvp.contract.ExampleContract;
 import com.zoujuequn.baseproject.mvp.factory.DataSource;
 import com.zoujuequn.baseproject.mvp.factory.Network;
@@ -30,16 +32,17 @@ import java.util.Map;
  *     email:15695947865@139.com
  * </pre>
  */
-public class ExamplePresenter implements ExampleContract.Presenter, DataSource.Callback<CallResponse> {
+public class ExamplePresenter extends BasePresenter<ExampleContract.View>
+        implements ExampleContract.Presenter, DataSource.Callback<CallResponse> {
 
-    @NonNull
-    private final ExampleContract.View mExampleContractView;
+    private  ExampleContract.View mExampleContractView;
 
-
-    public ExamplePresenter(@NonNull ExampleContract.View exampleContractView) {
-        this.mExampleContractView = exampleContractView;
-        this.mExampleContractView.setPresenter(this);
+    public ExamplePresenter(ExampleContract.View view) {
+        super(view);
+        mExampleContractView = getView();
     }
+
+
 
 
     @Override
@@ -54,42 +57,20 @@ public class ExamplePresenter implements ExampleContract.Presenter, DataSource.C
         final Map<String, String> paramsMap = new HashMap<String, String>();
         Network.getInstance().getRequestCall(URLConfig.URL_GETINDEXBANNERLIST, paramsMap, new DataSource.Callback<CallResponse>() {
             @Override
-            public void onDataNotAvailable(String strRes) {
+            public void onDataResponseFailed(String strRes) {
 
             }
 
             @Override
             public void onDataResponseSucceed(CallResponse callResponse) {
-
+                mExampleContractView.onGetIndexGoodsTypeListSuccess(callResponse.getResultList("list", GoodsTypeModel.class));
             }
         });
-        NetworkUtils.onSuccessResponse(URLConfig.URL_GETINDEXGOODSTYPELIST, paramsMap)
-                .execute(new StringCallback() {
-                    @Override
-                    public void onError(okhttp3.Call call, Exception e, int id) {
-
-                    }
-
-                    @Override
-                    public void onResponse(String response, int id) {
-                        try {
-                            LogUtils.e(BaseActivity.TAG, response);
-                            CallResponse callResponse = JSON.parseObject(response, CallResponse.class);
-                            if (null != callResponse && 1 == callResponse.getStatus()) {
-                                mExampleContractView.onGetIndexGoodsTypeListSuccess(callResponse.getResultList("list", GoodsTypeModel.class));
-                            } else {
-                                mExampleContractView.showMessage(callResponse.getStatusReson());
-
-                            }
-                        } catch (Exception e) {
-                            LogUtils.e(BaseActivity.TAG, e.toString());
-                        }
-                    }
-                });
     }
 
     @Override
     public void doGetIndexRecommentList(final String recomment_type, String region_id, String latitdue, String longitude, int page) {
+
         final Map<String, String> paramsMap = new HashMap<String, String>();
         paramsMap.put("recomment_type", recomment_type);
         paramsMap.put("region_id", region_id);
@@ -97,37 +78,25 @@ public class ExamplePresenter implements ExampleContract.Presenter, DataSource.C
         paramsMap.put("longitude", longitude);
         paramsMap.put("page", String.valueOf(page));
         paramsMap.put("page_size", String.valueOf(20));
-        LogUtils.e(BaseActivity.TAG, paramsMap.toString());
-        NetworkUtils.onSuccessResponse(URLConfig.URL_GETINDEXRECOMMENTLIST, paramsMap)
-                .execute(new StringCallback() {
-                    @Override
-                    public void onError(okhttp3.Call call, Exception e, int id) {
+        Network.getInstance().getRequestCall(URLConfig.URL_GETINDEXBANNERLIST, paramsMap, new DataSource.Callback<CallResponse>() {
+            @Override
+            public void onDataResponseFailed(String strRes) {
 
-                    }
+            }
 
-                    @Override
-                    public void onResponse(String response, int id) {
-                        try {
-                            LogUtils.e(BaseActivity.TAG, response);
-                            CallResponse callResponse = JSON.parseObject(response, CallResponse.class);
-                            if (null != callResponse && 1 == callResponse.getStatus()) {
-                                if (TextUtils.equals(String.valueOf(4), recomment_type))
-                                    mExampleContractView.onGetIndexRecommentListGoodsSuccess(callResponse.getResult(GetIndexRecommentListModel.class));
-                                else
-                                    mExampleContractView.onGetIndexRecommentListShopSuccess(callResponse.getResult(RecommentShopModel.class));
-                            } else {
-                                mExampleContractView.showMessage(callResponse.getStatusReson());
+            @Override
+            public void onDataResponseSucceed(CallResponse callResponse) {
+                if (TextUtils.equals(String.valueOf(4), recomment_type))
+                    mExampleContractView.onGetIndexRecommentListGoodsSuccess(callResponse.getResult(GetIndexRecommentListModel.class));
+                else
+                    mExampleContractView.onGetIndexRecommentListShopSuccess(callResponse.getResult(RecommentShopModel.class));
+            }
+        });
 
-                            }
-                        } catch (Exception e) {
-                            LogUtils.e(BaseActivity.TAG, e.toString());
-                        }
-                    }
-                });
     }
 
     @Override
-    public void onDataNotAvailable(String strRes) {
+    public void onDataResponseFailed(String strRes) {
 
     }
 
@@ -135,4 +104,5 @@ public class ExamplePresenter implements ExampleContract.Presenter, DataSource.C
     public void onDataResponseSucceed(CallResponse callResponse) {
         mExampleContractView.onGetIndexBannerListSuccess(callResponse.getResult(IndexBannerModel.class));
     }
+
 }

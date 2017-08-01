@@ -137,22 +137,18 @@ public class MineFragment extends BaseFragment implements SwipeRefreshLayout.OnR
     }
 
     @Override
+    public void showError(String str) {
+
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
     public void setPresenter(ExampleContract.Presenter presenter) {
 
     }
 
-    @Override
-    public void showLoading(String message) {
-
-    }
-
-    @Override
-    public void hideLoading() {
-
-    }
-
-    @Override
-    public void showMessage(String message) {
-
-    }
 }

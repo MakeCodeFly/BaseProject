@@ -37,7 +37,7 @@ public abstract class BaseActivity extends AutoLayoutActivity implements View.On
             mContentView = LayoutInflater.from(this).inflate(bindLayout(), null);
             setContentView(mContentView);
             initView(mContentView);
-            doBusiness(this);
+            processLogic(savedInstanceState);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -70,12 +70,14 @@ public abstract class BaseActivity extends AutoLayoutActivity implements View.On
      */
     public abstract void initView(final View parentView);
 
+
     /**
-     * [业务操作]
+     * 处理业务逻辑，状态恢复等操作
      *
-     * @param mContext
+     * @param savedInstanceState
      */
-    public abstract void doBusiness(Context mContext);
+    protected abstract void processLogic(Bundle savedInstanceState);
+
 
     /** View点击 **/
     public abstract void widgetClick(View v);

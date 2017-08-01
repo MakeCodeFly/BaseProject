@@ -1,5 +1,6 @@
 package com.zoujuequn.baseproject.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.annotation.LayoutRes;
@@ -48,11 +49,11 @@ public class RecommentShopAdapter extends BaseQuickAdapter<RecommentShopModel.li
         ImageView imageView = helper.getView(R.id.irs_iv_image);
         ViewGroup.LayoutParams layoutParams = imageView.getLayoutParams();
         layoutParams.height = AppUtils.getScreenWidth(mContext)/2;
-        GlideUtils.loadViewHolder(mContext,item.getOs_logo(),imageView);
+        GlideUtils.loadViewHolder((Activity) mContext,item.getOs_logo(),imageView);
         helper.setText(R.id.irs_tv_shop_name,item.getOs_name());
         helper.setText(R.id.irs_tv_shop_type,item.getOs_jianjie());
-        SpannableString styledText = new SpannableString(TextUtils.concat("距离 ",AppUtils.keepADemicalOfDouble((Double.parseDouble(item.getOs_distance()) / 1000))));
+        /*SpannableString styledText = new SpannableString(TextUtils.concat("距离 ",AppUtils.keepADemicalOfDouble((Double.parseDouble(item.getOs_distance()) / 1000))));
         styledText.setSpan(new ForegroundColorSpan(ContextCompat.getColor(mContext,R.color.color_757575)), 0,2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        ((TextView)helper.getView(R.id.irs_tv_distance)).setText(styledText, TextView.BufferType.SPANNABLE);
+        ((TextView)helper.getView(R.id.irs_tv_distance)).setText(styledText, TextView.BufferType.SPANNABLE);*/
     }
 }

@@ -31,6 +31,7 @@ public class ToastUtils {
     }
 
     public void cancel() {
-        mToast.cancel();
+        if (mToast != null)
+            mToast.cancel();
     }
 }

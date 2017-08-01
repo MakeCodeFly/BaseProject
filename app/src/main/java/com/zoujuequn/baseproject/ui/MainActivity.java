@@ -1,6 +1,7 @@
 package com.zoujuequn.baseproject.ui;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -46,7 +47,7 @@ public class MainActivity extends BaseActivity  implements BottomNavigationView.
     }
 
     @Override
-    public void doBusiness(Context mContext) {
+    protected void processLogic(Bundle savedInstanceState) {
         // 初始化底部辅助工具类
         mNavHelper = new NavHelper<>(this, R.id.lay_container,
                 getSupportFragmentManager(), this);
@@ -63,6 +64,7 @@ public class MainActivity extends BaseActivity  implements BottomNavigationView.
         // 触发首次选中Home
         menu.performIdentifierAction(R.id.action_home, 0);
     }
+
 
     @Override
     public void widgetClick(View v) {

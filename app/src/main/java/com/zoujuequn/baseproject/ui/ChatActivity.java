@@ -1,6 +1,7 @@
 package com.zoujuequn.baseproject.ui;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -39,7 +40,7 @@ public class ChatActivity extends BaseActivity {
     }
 
     @Override
-    public void doBusiness(Context mContext) {
+    protected void processLogic(Bundle savedInstanceState) {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mDataRv.setLayoutManager(layoutManager);

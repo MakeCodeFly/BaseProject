@@ -1,5 +1,6 @@
 package com.zoujuequn.baseproject.fragments;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -196,26 +197,22 @@ public class ShopCarFragment extends BaseFragment implements SwipeRefreshLayout.
     }
 
 
+    @Override
+    public void showError(String str) {
+
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
 
     @Override
     public void setPresenter(ExampleContract.Presenter presenter) {
         this.mPresenter = presenter;
     }
 
-    @Override
-    public void showLoading(String message) {
 
-    }
-
-    @Override
-    public void hideLoading() {
-
-    }
-
-    @Override
-    public void showMessage(String message) {
-
-    }
 
 
     public class LocalImageHolderView implements Holder<String> {
@@ -230,7 +227,7 @@ public class ShopCarFragment extends BaseFragment implements SwipeRefreshLayout.
 
         @Override
         public void UpdateUI(Context context, int position, String data) {
-            GlideUtils.loadViewHolder(context, imageUrls.get(position), imageView);
+            GlideUtils.loadViewHolder((Activity) context, imageUrls.get(position), imageView);
         }
     }
 

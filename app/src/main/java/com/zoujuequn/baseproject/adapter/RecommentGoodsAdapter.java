@@ -1,5 +1,6 @@
 package com.zoujuequn.baseproject.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
@@ -46,7 +47,7 @@ public class RecommentGoodsAdapter extends BaseQuickAdapter<GetIndexRecommentLis
         ImageView imageView = helper.getView(R.id.irg_iv_image);
         ViewGroup.LayoutParams layoutParams = imageView.getLayoutParams();
         layoutParams.height = AppUtils.getScreenWidth(mContext)/2;
-        GlideUtils.loadViewHolder(mContext,item.getOsg_logo(),imageView);
+        GlideUtils.loadViewHolder((Activity) mContext,item.getOsg_logo(),imageView);
         helper.setText(R.id.irg_tv_goods_name,item.getOsg_name());
         SpannableString styledText = new SpannableString(TextUtils.concat("¥ ",item.getOsg_price()));
         styledText.setSpan(new AbsoluteSizeSpan(40), 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);

@@ -1,6 +1,7 @@
 package com.zoujuequn.baseproject.ui;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
@@ -39,9 +40,10 @@ public class WebViewDemoActivity extends BaseActivity {
     }
 
     @Override
-    public void doBusiness(Context mContext) {
+    protected void processLogic(Bundle savedInstanceState) {
 
     }
+
     @Override
     public void widgetClick(View v) {
 

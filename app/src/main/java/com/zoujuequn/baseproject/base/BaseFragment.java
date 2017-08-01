@@ -43,7 +43,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         if (mContentView == null) {
             setContentView(bindLayout());
             initView(mContentView);
-//            processLogic(savedInstanceState);
+            processLogic(savedInstanceState);
         } else {
             ViewGroup parent = (ViewGroup) mContentView.getParent();
             if (parent != null) {
