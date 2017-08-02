@@ -1,16 +1,9 @@
 package com.zoujuequn.baseproject.mvp.presenter;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
-import com.alibaba.fastjson.JSON;
-import com.zhy.http.okhttp.callback.StringCallback;
-import com.zoujuequn.baseproject.base.BaseActivity;
-import com.zoujuequn.baseproject.base.BaseApplication;
 import com.zoujuequn.baseproject.config.URLConfig;
 import com.zoujuequn.baseproject.model.CallResponse;
-import com.zoujuequn.baseproject.mvp.basepresenter.BaseContract;
 import com.zoujuequn.baseproject.mvp.basepresenter.BasePresenter;
 import com.zoujuequn.baseproject.mvp.contract.ExampleContract;
 import com.zoujuequn.baseproject.mvp.factory.DataSource;
@@ -19,8 +12,6 @@ import com.zoujuequn.baseproject.mvp.model.GetIndexRecommentListModel;
 import com.zoujuequn.baseproject.mvp.model.GoodsTypeModel;
 import com.zoujuequn.baseproject.mvp.model.IndexBannerModel;
 import com.zoujuequn.baseproject.mvp.model.RecommentShopModel;
-import com.zoujuequn.baseproject.utils.LogUtils;
-import com.zoujuequn.baseproject.utils.NetworkUtils;
 
 import java.util.HashMap;
 import java.util.Map;

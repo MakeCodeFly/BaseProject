@@ -8,7 +8,6 @@ import android.webkit.WebViewClient;
 import com.zoujuequn.baseproject.R;
 import com.zoujuequn.baseproject.base.BaseActivity;
 import com.zoujuequn.baseproject.base.BaseFragment;
-import com.zoujuequn.baseproject.utils.LogUtils;
 import com.zoujuequn.baseproject.widget.ProgressWebView;
 
 /**

@@ -4,17 +4,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
-import android.text.Html;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.zoujuequn.baseproject.R;
-import com.zoujuequn.baseproject.model.ChatModel;
 import com.zoujuequn.baseproject.mvp.model.GoodsTypeModel;
-import com.zoujuequn.baseproject.utils.AppUtils;
 import com.zoujuequn.baseproject.utils.GlideUtils;
 
 import java.util.List;

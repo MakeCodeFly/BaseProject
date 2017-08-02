@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -22,7 +21,6 @@ import com.zoujuequn.baseproject.R;
 import com.zoujuequn.baseproject.adapter.FragmentAdapter;
 import com.zoujuequn.baseproject.adapter.GoodsTypeListAdapter;
 import com.zoujuequn.baseproject.base.BaseActivity;
-import com.zoujuequn.baseproject.base.BaseApplication;
 import com.zoujuequn.baseproject.base.BaseFragment;
 import com.zoujuequn.baseproject.mvp.contract.ExampleContract;
 import com.zoujuequn.baseproject.mvp.model.GetIndexRecommentListModel;
@@ -30,7 +28,6 @@ import com.zoujuequn.baseproject.mvp.model.GoodsTypeModel;
 import com.zoujuequn.baseproject.mvp.model.IndexBannerModel;
 import com.zoujuequn.baseproject.mvp.model.RecommentShopModel;
 import com.zoujuequn.baseproject.mvp.presenter.ExamplePresenter;
-import com.zoujuequn.baseproject.utils.EventBusUtil;
 import com.zoujuequn.baseproject.utils.EventBusUtils;
 import com.zoujuequn.baseproject.utils.GlideUtils;
 import com.zoujuequn.baseproject.utils.LogUtils;
@@ -75,7 +72,6 @@ public class ShopCarFragment extends BaseFragment implements SwipeRefreshLayout.
 
     @Override
     public void initView(View view) {
-        EventBusUtils.registerEventBus(this);
         mRefreshLayout = getViewById(R.id.swiperefreshlayout);
         mRecyclerView = getViewById(R.id.recyclerview);
         mRefreshLayout.setOnRefreshListener(this);
@@ -116,13 +112,6 @@ public class ShopCarFragment extends BaseFragment implements SwipeRefreshLayout.
     @Override
     public void widgetClick(View v) {
 
-    }
-    @Subscribe
-    public void onEventMainThread(String eventType) {
-        LogUtils.e(BaseActivity.TAG,"EVENT_REFRESH_DONE");
-        if (TextUtils.equals(eventType,BaseActivity.EVENT_REFRESH_DONE)){
-            mRefreshLayout.setRefreshing(false);
-        }
     }
 
 
@@ -231,9 +220,4 @@ public class ShopCarFragment extends BaseFragment implements SwipeRefreshLayout.
         }
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        EventBusUtils.unRegisterEventBus(this);
-    }
 }

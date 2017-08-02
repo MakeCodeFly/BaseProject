@@ -1,15 +1,12 @@
 package com.zoujuequn.baseproject.base;
 
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.view.LayoutInflater;
 import android.view.View;
 
 import com.zhy.autolayout.AutoLayoutActivity;
-
-import org.greenrobot.eventbus.Subscribe;
 
 
 /**

@@ -1,8 +1,6 @@
 package com.zoujuequn.baseproject.mvp.contract;
 
 
-import com.zoujuequn.baseproject.base.BasePresenter;
-import com.zoujuequn.baseproject.base.BaseView;
 import com.zoujuequn.baseproject.mvp.basepresenter.BaseContract;
 import com.zoujuequn.baseproject.mvp.model.GetIndexRecommentListModel;
 import com.zoujuequn.baseproject.mvp.model.GoodsTypeModel;

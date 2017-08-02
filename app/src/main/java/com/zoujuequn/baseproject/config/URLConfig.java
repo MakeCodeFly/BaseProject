@@ -1,7 +1,5 @@
 package com.zoujuequn.baseproject.config;
 
-import android.text.TextUtils;
-
 /**
  * <pre>
  *     author: MakeCodeFly

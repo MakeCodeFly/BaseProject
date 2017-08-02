@@ -2,25 +2,14 @@ package com.zoujuequn.baseproject.adapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.TextUtils;
-import android.text.style.AbsoluteSizeSpan;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.TextAppearanceSpan;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.zoujuequn.baseproject.R;
-import com.zoujuequn.baseproject.mvp.model.GoodsTypeModel;
 import com.zoujuequn.baseproject.mvp.model.RecommentShopModel;
 import com.zoujuequn.baseproject.utils.AppUtils;
 import com.zoujuequn.baseproject.utils.GlideUtils;

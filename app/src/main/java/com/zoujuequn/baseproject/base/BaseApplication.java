@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 
+import com.orhanobut.logger.AndroidLogAdapter;
+import com.orhanobut.logger.Logger;
 import com.tencent.tinker.loader.app.ApplicationLike;
 import com.tinkerpatch.sdk.TinkerPatch;
 import com.tinkerpatch.sdk.loader.TinkerPatchApplicationLike;
@@ -21,6 +23,7 @@ public class BaseApplication extends Application {
     private static BaseApplication instance;
 
     private ApplicationLike tinkerApplicationLike;
+
     public BaseApplication() {
 
     }
@@ -30,8 +33,17 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
-        //初始化热修复参数
-        initTinkerPatch();
+        initTinkerPatch();//初始化热修复参数
+        initLogger();//初始化Logger
+    }
+
+    private void initLogger() {
+        Logger.addLogAdapter(new AndroidLogAdapter() {
+            @Override
+            public boolean isLoggable(int priority, String tag) {
+                return BuildConfig.LOG_DEBUG;
+            }
+        });
     }
 
     /**

@@ -7,7 +7,6 @@ import android.text.TextUtils;
 import android.view.View;
 
 import com.zoujuequn.baseproject.R;
-import com.zoujuequn.baseproject.adapter.GoodsTypeListAdapter;
 import com.zoujuequn.baseproject.adapter.RecommentGoodsAdapter;
 import com.zoujuequn.baseproject.adapter.RecommentShopAdapter;
 import com.zoujuequn.baseproject.base.BaseActivity;
@@ -18,11 +17,9 @@ import com.zoujuequn.baseproject.mvp.model.GoodsTypeModel;
 import com.zoujuequn.baseproject.mvp.model.IndexBannerModel;
 import com.zoujuequn.baseproject.mvp.model.RecommentShopModel;
 import com.zoujuequn.baseproject.mvp.presenter.ExamplePresenter;
-import com.zoujuequn.baseproject.utils.EventBusUtil;
 import com.zoujuequn.baseproject.utils.EventBusUtils;
 import com.zoujuequn.baseproject.utils.LogUtils;
 import com.zoujuequn.baseproject.widget.DividerGridItemDecoration;
-import com.zoujuequn.baseproject.widget.FullyGridLayoutManager;
 
 import org.greenrobot.eventbus.Subscribe;
 
