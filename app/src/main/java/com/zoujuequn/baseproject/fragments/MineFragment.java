@@ -59,7 +59,7 @@ public class MineFragment extends BaseFragment implements SwipeRefreshLayout.OnR
     @Override
     public void initView(View view) {
         mRefreshLayout = getViewById(R.id.swiperefreshlayout);
-        mRecyclerView = getViewById(R.id.recyclerview);
+//        mRecyclerView = getViewById(R.id.recyclerview);
         mRefreshLayout.setOnRefreshListener(this);
         mRefreshLayout.setColorSchemeColors(Color.rgb(47, 223, 189));
         GridLayoutManager manager = new GridLayoutManager(mContext, 2);

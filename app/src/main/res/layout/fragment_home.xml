@@ -14,5 +14,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <com.zoujuequn.baseproject.widget.ClearableEditText
+        android:layout_width="match_parent"
+        android:padding="@dimen/dp_10"
+        android:inputType="number"
+        android:background="@null"
+        android:layout_height="wrap_content" />
+
+
+
+
+
 
 </LinearLayout>

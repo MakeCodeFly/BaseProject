@@ -10,6 +10,7 @@ import com.tencent.tinker.loader.app.ApplicationLike;
 import com.tinkerpatch.sdk.TinkerPatch;
 import com.tinkerpatch.sdk.loader.TinkerPatchApplicationLike;
 import com.zoujuequn.baseproject.BuildConfig;
+import com.zoujuequn.baseproject.utils.CrashHandlerUtil;
 
 /**
  * <pre>
@@ -32,6 +33,9 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        CrashHandlerUtil crashHandlerUtil = CrashHandlerUtil.getInstance();
+        crashHandlerUtil.init(this);
+        crashHandlerUtil.setCrashTip("很抱歉，程序出现异常，即将退出！");
         instance = this;
         initTinkerPatch();//初始化热修复参数
         initLogger();//初始化Logger
