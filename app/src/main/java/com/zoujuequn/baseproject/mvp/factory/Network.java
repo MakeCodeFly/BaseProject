@@ -51,8 +51,8 @@ public class Network {
 
             @Override
             public void onResponse(String response, int id) {
-
                 Logger.e("请求接口：   "+url+"\n参数：   "+params+"\n返回结果：  "+response);
+//                Logger.json(response);
                 CallResponse callResponse = JSON.parseObject(response, CallResponse.class);
                 if (callResponse != null && callResponse.getStatus() == 1)
                     callback.onDataResponseSucceed(callResponse);

@@ -3,8 +3,12 @@ package com.zoujuequn.baseproject.utils;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.text.Editable;
+import android.text.InputType;
+import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
+import android.widget.EditText;
 
 import java.text.DecimalFormat;
 
@@ -145,6 +149,58 @@ public class AppUtils {
     public static String keepADemicalOfDouble(double num) {
         //使用0.00不足位补0，#.##仅保留有效位
         return new DecimalFormat("0.00").format(num);
+    }
+
+
+    /**
+     * 价格输入控制
+     *
+     * mEtGoodsPrice.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+    AppUtils.setPricePoint(mEtGoodsPrice);
+     * @return sp值
+     */
+    public static void setPricePoint(final EditText editText) {
+        editText.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before,
+                                      int count) {
+                if (s.toString().contains(".")) {
+                    if (s.length() - 1 - s.toString().indexOf(".") > 2) {
+                        s = s.toString().subSequence(0,
+                                s.toString().indexOf(".") + 3);
+                        editText.setText(s);
+                        editText.setSelection(s.length());
+                    }
+                }
+                if (s.toString().trim().substring(0).equals(".")) {
+                    s = "0" + s;
+                    editText.setText(s);
+                    editText.setSelection(2);
+                }
+
+                if (s.toString().startsWith("0")
+                        && s.toString().trim().length() > 1) {
+                    if (!s.toString().substring(1, 2).equals(".")) {
+                        editText.setText(s.subSequence(0, 1));
+                        editText.setSelection(1);
+                        return;
+                    }
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+
+            }
+        });
+
     }
 
 
