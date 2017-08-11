@@ -2,6 +2,8 @@ package com.zoujuequn.baseproject.ui;
 
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Layout;
 import android.text.style.AlignmentSpan;
@@ -23,10 +25,14 @@ import android.widget.TextView;
 
 import com.zoujuequn.baseproject.R;
 import com.zoujuequn.baseproject.base.BaseActivity;
+import com.zoujuequn.baseproject.widget.FullScreenVideoView;
 import com.zoujuequn.baseproject.widget.SpannyTextView;
 
 
 public class SpanyActivity extends BaseActivity {
+
+    private FullScreenVideoView myVideoView;
+
     @Override
     public int bindLayout() {
         return R.layout.activity_spany;
@@ -36,6 +42,7 @@ public class SpanyActivity extends BaseActivity {
     public void initView(View parentView) {
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Pacifico.ttf");
         TextView textView = (TextView) parentView.findViewById(R.id.textView);
+        myVideoView = (FullScreenVideoView) parentView.findViewById(R.id.videoView);
         SpannyTextView spanny = new SpannyTextView("StyleSpan\n", new StyleSpan(Typeface.BOLD_ITALIC))
                 .append("\nUnderlineSpan, ", new UnderlineSpan())
                 .append(" TypefaceSpan, ", new TypefaceSpan("serif"))
@@ -64,6 +71,32 @@ public class SpanyActivity extends BaseActivity {
             }
         });
         textView.append(spanny);
+
+
+        initDate();
+    }
+
+    private void initDate() {
+        final String videoPath = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.video).toString();
+        myVideoView.setVideoPath(videoPath);
+        myVideoView.start();
+        myVideoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mp.start();
+                mp.setLooping(true);
+            }
+        });
+
+        myVideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                myVideoView.setVideoPath(videoPath);
+                myVideoView.start();
+            }
+        });
     }
 
     private int dp(int value) {
