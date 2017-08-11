@@ -10,6 +10,13 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 
+    <!-- SD卡读取权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+
+
+
+
     <application
         android:name=".base.BaseApplication"
         android:allowBackup="true"
@@ -36,16 +43,15 @@
             android:windowSoftInputMode="stateAlwaysHidden" />
 
 
-        <activity
-            android:name=".ui.ChatActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
-
-
         <meta-data android:name="design_width" android:value="1080"/>
         <meta-data android:name="design_height" android:value="1920"/>
+
+        <!-- 广播注册 -->
+        <receiver android:name=".utils.AppInstallReceiver">
+            <intent-filter android:priority="20" >
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+            </intent-filter>
+        </receiver>
 
     </application>
 

@@ -69,7 +69,6 @@ public class MainActivity extends BaseActivity  implements BottomNavigationView.
     public void widgetClick(View v) {
         switch (v.getId()){
             case R.id.am_chat:
-                IntentUtils.gotoActivity(this,ChatActivity.class);
                 break;
         }
     }

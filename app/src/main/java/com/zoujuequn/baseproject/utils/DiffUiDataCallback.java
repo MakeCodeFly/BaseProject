@@ -7,6 +7,9 @@ import java.util.List;
 /**
  * @author MakeCodeFly
  * @version 1.0.0
+ * DiffUtil.DiffResult diffResult =
+DiffUtil.calculateDiff(new DiffCallBack(oldDatas, newDatas), true);
+diffResult.dispatchUpdatesTo(mAdapter);
  */
 public class DiffUiDataCallback<T extends DiffUiDataCallback.UiDataDiffer<T>> extends DiffUtil.Callback {
     private List<T> mOldList, mNewList;
