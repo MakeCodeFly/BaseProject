@@ -14,12 +14,24 @@ import android.widget.PopupWindow;
  * <pre>
  *     author: MakeCodeFly
  *     email:15695947865@139.com
+ *
+ *     CustomPopupWindow popupWindow = new CustomPopupWindow.Builder()
+ .setContext(this) //设置 context
+ .setContentView(R.layout.popup_calendar) //设置布局文件
+ .setwidth(LinearLayout.LayoutParams.WRAP_CONTENT) //设置宽度，由于我已经在布局写好，这里就用 wrap_content就好了
+ .setheight(LinearLayout.LayoutParams.WRAP_CONTENT) //设置高度
+ .setFouse(true)  //设置popupwindow 是否可以获取焦点
+ .setOutSideCancel(true) //设置点击外部取消
+ .setAnimationStyle(R.style.popup_anim_style) //设置popupwindow动画
+ .builder() //
+ .showAtLocation(R.layout.activity_calendar, Gravity.CENTER,0,0);
  * </pre>
  */
 public  class CustomPopupWindow {
     private PopupWindow mPopupWindow;
     private View contentview;
     private Context mContext;
+    private OnDismissListener mOnDismissListener;
     public CustomPopupWindow(Builder builder) {
         mContext = builder.context;
         contentview = LayoutInflater.from(mContext).inflate(builder.contentviewid,null);
@@ -29,17 +41,30 @@ public  class CustomPopupWindow {
         //需要跟 setBackGroundDrawable 结合
         mPopupWindow.setOutsideTouchable(builder.outsidecancel);
         mPopupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
+        mPopupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+                    if (mOnDismissListener != null)
+                        mOnDismissListener.onDismiss();
+            }
+        });
         mPopupWindow.setAnimationStyle(builder.animstyle);
     }
 
 
+    interface OnDismissListener{
+        void onDismiss();
+    }
+
+    public void setmOnDismissListener(OnDismissListener mOnDismissListener) {
+        this.mOnDismissListener = mOnDismissListener;
+    }
 
     /**
      * popup 消失
      */
     public void dismiss(){
-        if (mPopupWindow != null){
+        if (mPopupWindow != null && mPopupWindow.isShowing()){
             mPopupWindow.dismiss();
         }
     }
