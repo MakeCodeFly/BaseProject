@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BaseProject</string>
+    <string name="app_name">基础项目</string>
     <string name="app_exit">再按一次退出应用！</string>
     <string name="no_permission">没有此权限，无法开启这个功能，请开启权限。</string>
     <string name="network_invaliable">网络错误</string>

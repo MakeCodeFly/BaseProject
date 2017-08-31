@@ -46,12 +46,12 @@ public class GlideUtils {
     /**
      * 加载圆角头像
      */
-    public static void loadRoundViewHolder(final Activity activity, String path, final ImageView mImageView) {
+    public static void loadRoundViewHolder(final Activity activity, String path, final ImageView mImageView,int radiusDp) {
         RequestOptions requestOptions = new RequestOptions()
                 .placeholder(R.mipmap.ic_launcher)  //指定加载前显示的图片资源
                 .fallback(R.mipmap.ic_launcher)//指定传递加载资源为 null 的时候，显示的图片资源
                 .error(R.mipmap.ic_launcher)//指定加载失败显示的图片资源
-                .transform(new GlideRoundTransform());
+                .transform(new GlideRoundTransform(radiusDp));
         Glide.with(activity).load(path).apply(requestOptions).into(mImageView);
     }
 

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:id="@+id/item_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/contactitem_layout"
+            style="@style/MMListItem"
+            android:layout_height="55dip"
+            android:gravity="center_vertical"
+            android:background="@android:color/white"
+            android:paddingLeft="8dip">
+
+
+            <ImageView
+                android:id="@+id/contactitem_avatar_iv"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp">
+
+                <TextView
+                    android:id="@+id/item_content"
+                    style="@style/MMFontTitleInList"
+                    android:lines="1"
+                    android:ellipsize="end"
+                    android:paddingBottom="2dp"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true" />
+
+
+                <TextView
+                    android:id="@+id/inf_tv_describtion"
+                    style="@style/MMFontTitleInList"
+                    android:lines="1"
+                    android:ellipsize="end"
+                    android:paddingTop="2dp"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/inf_tv_accept"
+                android:text="接受"
+                android:padding="6dp"
+                android:textSize="14sp"
+                android:layout_marginRight="10dp"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:textColor="@android:color/white"
+                android:layout_height="wrap_content"
+                android:singleLine="true" />
+
+            <TextView
+                android:id="@+id/inf_tv_already_add"
+                android:text="已添加"
+                android:textSize="14sp"
+                android:visibility="gone"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true" />
+
+
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/item_delete"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="#88ff0000"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="#55000000" />
+
+</RelativeLayout>

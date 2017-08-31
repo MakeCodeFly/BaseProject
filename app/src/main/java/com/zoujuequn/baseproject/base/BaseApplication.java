@@ -3,6 +3,7 @@ package com.zoujuequn.baseproject.base;
 import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
+import android.util.Log;
 
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
@@ -55,15 +56,13 @@ public class BaseApplication extends Application {
         if (BuildConfig.TINKER_ENABLE) {
             tinkerApplicationLike = TinkerPatchApplicationLike.getTinkerPatchApplicationLike();
             // 初始化TinkerPatch SDK
-            TinkerPatch.init(tinkerApplicationLike)
+            TinkerPatch.init(
+                    tinkerApplicationLike
+            )
                     .reflectPatchLibrary()
                     .setPatchRollbackOnScreenOff(true)
                     .setPatchRestartOnSrceenOff(true)
-                    .setFetchPatchIntervalByHours(3)
-            ;
-
-
-            // fetchPatchUpdateAndPollWithInterval 与 fetchPatchUpdate(false)
+                    .setFetchPatchIntervalByHours(3);
             // 不同的是，会通过handler的方式去轮询
             TinkerPatch.with().fetchPatchUpdateAndPollWithInterval();
         }
