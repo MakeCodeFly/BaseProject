@@ -6,9 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by lvruheng on 2017/8/1.
- */
+
 
 public abstract class FlowAdapter<T> {
     private List<T> mList;
