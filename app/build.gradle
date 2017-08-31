@@ -11,18 +11,17 @@ android {
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
+        multiDexKeepProguard file("tinkerMultidexKeep.pro") //keep specific classes using proguard syntax
     }
     buildTypes {
         release {
             buildConfigField "boolean", "LOG_DEBUG", "false"
             minifyEnabled true
-            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {//调试
             buildConfigField "boolean", "LOG_DEBUG", "false"
             minifyEnabled false
-            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -32,14 +31,17 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.android.support:recyclerview-v7:25.3.0'
+    compile 'com.android.support:design:25.3.1'
+
     compile 'com.android.support:multidex:1.0.1'
     // 若使用annotation需要单独引用,对于tinker的其他库都无需再引用
-    provided 'com.tinkerpatch.tinker:tinker-android-anno:1.7.11'
-    compile 'com.tinkerpatch.sdk:tinkerpatch-android-sdk:1.1.7'
+    provided("com.tinkerpatch.tinker:tinker-android-anno:1.8.0")
+    compile("com.tinkerpatch.sdk:tinkerpatch-android-sdk:1.1.8")
     //事件总线
     compile 'org.greenrobot:eventbus:3.0.0'
     //fastjson
-    compile 'com.alibaba:fastjson:1.1.60.android'
+    compile 'com.alibaba:fastjson:1.1.62.android'
     //glide
     compile 'com.github.bumptech.glide:glide:4.0.0'
 //    annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
@@ -49,8 +51,7 @@ dependencies {
     compile 'com.zhy:autolayout:1.4.5'
     //RecycylerView适配器
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.18'
-    compile 'com.android.support:recyclerview-v7:25.3.0'
-    compile 'com.android.support:design:25.3.1'
+
     //TabLayout
     compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
     //轮播
