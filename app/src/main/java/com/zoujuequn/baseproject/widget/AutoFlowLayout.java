@@ -13,8 +13,14 @@ import com.zoujuequn.baseproject.R;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 /**
- *自定义LinearLayout，支持自动换行，指定行数,实现流式布局
+ * <pre>
+ *     author: MakeCodeFly
+ *     email:15695947865@139.com
+ *     desc:自定义LinearLayout，支持自动换行，指定行数,实现流式布局
+ * </pre>
  */
 public class AutoFlowLayout<T> extends ViewGroup  {
     /**

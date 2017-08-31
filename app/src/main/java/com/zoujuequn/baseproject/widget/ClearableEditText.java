@@ -14,10 +14,11 @@ import com.zoujuequn.baseproject.R;
 
 
 /**
- * 带有图标和删除符号的可编辑输入框，用户可以自定义传入的显示图标
- * 
- * @author MakeCodeFly
- * 
+ * <pre>
+ *     author: MakeCodeFly
+ *     email:15695947865@139.com
+ *     desc:带有图标和删除符号的可编辑输入框，用户可以自定义传入的显示图标
+ * </pre>
  */
 public class ClearableEditText extends EditText implements OnTouchListener, TextWatcher {
 

@@ -12,19 +12,25 @@ import android.widget.PopupWindow;
 
 /**
  * <pre>
+ *      用法：
+ *     CustomPopupWindow popupWindow = new CustomPopupWindow.Builder()
+        .setContext(this) //设置 context
+        .setContentView(R.layout.popup_calendar) //设置布局文件
+        .setwidth(LinearLayout.LayoutParams.WRAP_CONTENT) //设置宽度，由于我已经在布局写好，这里就用 wrap_content就好了
+        .setheight(LinearLayout.LayoutParams.WRAP_CONTENT) //设置高度
+        .setFouse(true)  //设置popupwindow 是否可以获取焦点
+        .setOutSideCancel(true) //设置点击外部取消
+        .setAnimationStyle(R.style.popup_anim_style) //设置popupwindow动画
+        .builder() //
+        .showAtLocation(R.layout.activity_calendar, Gravity.CENTER,0,0);
+ * </pre>
+ */
+
+/**
+ * <pre>
  *     author: MakeCodeFly
  *     email:15695947865@139.com
- *
- *     CustomPopupWindow popupWindow = new CustomPopupWindow.Builder()
- .setContext(this) //设置 context
- .setContentView(R.layout.popup_calendar) //设置布局文件
- .setwidth(LinearLayout.LayoutParams.WRAP_CONTENT) //设置宽度，由于我已经在布局写好，这里就用 wrap_content就好了
- .setheight(LinearLayout.LayoutParams.WRAP_CONTENT) //设置高度
- .setFouse(true)  //设置popupwindow 是否可以获取焦点
- .setOutSideCancel(true) //设置点击外部取消
- .setAnimationStyle(R.style.popup_anim_style) //设置popupwindow动画
- .builder() //
- .showAtLocation(R.layout.activity_calendar, Gravity.CENTER,0,0);
+ *     desc:自定义万能PopWindow
  * </pre>
  */
 public  class CustomPopupWindow {
