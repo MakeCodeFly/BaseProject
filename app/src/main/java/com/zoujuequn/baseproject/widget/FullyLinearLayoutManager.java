@@ -12,10 +12,13 @@ import com.zoujuequn.baseproject.utils.LogUtils;
 
 import java.lang.reflect.Field;
 
+
 /**
- * 重写 LinearLayoutManager 为了ScrollView可以显示RecyclerView 垂直布局
- * @author MakeCodeFly
- * @time 2017-07-11
+ * <pre>
+ *     author: MakeCodeFly
+ *     desc  : 重写 LinearLayoutManager 为了ScrollView可以显示RecyclerView 垂直布局
+ *     email:15695947865@139.com
+ * </pre>
  */
 public class FullyLinearLayoutManager extends LinearLayoutManager {
 

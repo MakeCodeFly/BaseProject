@@ -7,7 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Created by Administrator on 2017/7/14.
+ * <pre>
+ *     author: MakeCodeFly
+ *     desc  : 重写 FullyGridLayoutManager 为了ScrollView可以显示RecyclerView 垂直布局
+ *     email:15695947865@139.com
+ * </pre>
  */
 public class FullyGridLayoutManager extends GridLayoutManager {
 
