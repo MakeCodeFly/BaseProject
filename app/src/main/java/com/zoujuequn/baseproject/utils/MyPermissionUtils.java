@@ -13,6 +13,7 @@ import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.widget.Toast;
 
+
 import com.zoujuequn.baseproject.R;
 
 import java.util.ArrayList;
@@ -26,62 +27,67 @@ import java.util.Map;
  *     desc  : 6.0权限申请帮助类
  *     email:15695947865@139.com
  * 使用：
- *     MyPermissionUtils.requestMultiPermissions(this,mPermissionGrant);
- *
- *     @Override
- *     public void onRequestPermissionsResult(final int requestCode, @NonNull String[] permissions,
- *              @NonNull int[] grantResults) {
- *                        MyPermissionUtils.requestPermissionsResult(this, requestCode, permissions, grantResults, mPermissionGrant);
- *                                           }
- *        private MyPermissionUtils.PermissionGrant mPermissionGrant = new MyPermissionUtils.PermissionGrant() {
- *       @Override public void onPermissionGranted(int requestCode) {
- *       switch (requestCode) {
- *      case MyPermissionUtils.CODE_MULTI_PERMISSION:
- *      break;
- *      default:
- *      break;
- *      }
- *     }
- *    };
+MyPermissionUtils.requestMultiPermissions(this,mPermissionGrant);
+
+  @Override
+public void onRequestPermissionsResult(final int requestCode, @NonNull String[] permissions,
+@NonNull int[] grantResults) {
+MyPermissionUtils.requestPermissionsResult(this, requestCode, permissions, grantResults, mPermissionGrant);
+}
+private MyPermissionUtils.PermissionGrant mPermissionGrant = new MyPermissionUtils.PermissionGrant() {
+@Override public void onPermissionGranted(int requestCode) {
+switch (requestCode) {
+case MyPermissionUtils.CODE_MULTI_PERMISSION:
+break;
+default:
+break;
+}
+}
+};
+ @Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+switch (requestCode) {
+case MyPermissionUtils.REQUEST_CODE_SETTING: {
+newPermission();
+break;
+}
+}
+}
  */
 public class MyPermissionUtils {
 
     private static final String TAG = MyPermissionUtils.class.getSimpleName();
-    public static final int CODE_RECORD_AUDIO = 12;
+    public static final int CODE_READ_EXTERNAL_STORAGE = 0;
     public static final int CODE_READ_PHONE_STATE = 1;
-    public static final int CODE_CALL_PHONE = 2;
-    public static final int CODE_ACCESS_FINE_LOCATION = 3;
-    public static final int CODE_ACCESS_COARSE_LOCATION = 4;
-    public static final int CODE_READ_EXTERNAL_STORAGE = 5;
-    public static final int CODE_WRITE_EXTERNAL_STORAGE = 6;
-    public static final int CODE_READ_CONTACTS = 7;
-    public static final int CODE_WRITE_CONTACTS = 8;
-    public static final int CODE_PROCESS_OUTGOING_CALLS = 9;
-    public static final int CODE_READ_READ_SMS = 10;
-    public static final int CODE_RECEIVE_SMS = 11;
-    public static final int CODE_CAMERA = 0;
-    public static final int CODE_MULTI_PERMISSION = 100;
+    public static final int CODE_WRITE_EXTERNAL_STORAGE = 2;
+    public static final int CODE_RECORD_AUDIO = 3;
+    public static final int CODE_ACCESS_FINE_LOCATION = 4;
+    public static final int CODE_ACCESS_COARSE_LOCATION = 5;
+    public static final int CODE_CALL_PHONE = 6;
+    public static final int CODE_CAMERA = 7;
+    public static final int CODE_MULTI_PERMISSION = 0x22;
+    public static final int REQUEST_CODE_SETTING = 0x33;
 
 
-    public static final String PERMISSION_RECORD_AUDIO = Manifest.permission.RECORD_AUDIO;
-    public static final String PERMISSION_READ_PHONE_STATE = Manifest.permission.READ_PHONE_STATE;
-    public static final String PERMISSION_CALL_PHONE = Manifest.permission.CALL_PHONE;
-    public static final String READ_PHONE_STATE = Manifest.permission.READ_PHONE_STATE;
-    public static final String PERMISSION_ACCESS_FINE_LOCATION = Manifest.permission.ACCESS_FINE_LOCATION;
-    public static final String PERMISSION_ACCESS_COARSE_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION;
     public static final String PERMISSION_READ_EXTERNAL_STORAGE = Manifest.permission.READ_EXTERNAL_STORAGE;
+    public static final String PERMISSION_READ_PHONE_STATE = Manifest.permission.READ_PHONE_STATE;
     public static final String PERMISSION_WRITE_EXTERNAL_STORAGE = Manifest.permission.WRITE_EXTERNAL_STORAGE;
-    //自己添加
-    public static final String PERMISSION_READ_CONTACTS = Manifest.permission.READ_CONTACTS;
-    public static final String PERMISSION_WRITE_CONTACTS = Manifest.permission.WRITE_CONTACTS;
-    public static final String PERMISSION_PROCESS_OUTGOING_CALLS = Manifest.permission.PROCESS_OUTGOING_CALLS;
-    public static final String PERMISSION_READ_SMS = Manifest.permission.READ_SMS;
-    public static final String PERMISSION_RECEIVE_SMS = Manifest.permission.RECEIVE_SMS;
-    public static final String PERMISSION_SEND_SMS = Manifest.permission.SEND_SMS;
+    public static final String PERMISSION_RECORD_AUDIO = Manifest.permission.RECORD_AUDIO;
+    public static final String PERMISSION_ACCESS_FINE_LOCATION= Manifest.permission.ACCESS_FINE_LOCATION;
+    public static final String PERMISSION_ACCESS_COARSE_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION;
+    public static final String PERMISSION_CALL_PHONE = Manifest.permission.CALL_PHONE;
     public static final String PERMISSION_CAMERA = Manifest.permission.CAMERA;
 
+
     private static final String[] requestPermissions = {
-            PERMISSION_CAMERA
+            PERMISSION_READ_EXTERNAL_STORAGE,
+            PERMISSION_READ_PHONE_STATE,
+            PERMISSION_WRITE_EXTERNAL_STORAGE,
+            PERMISSION_RECORD_AUDIO,
+            PERMISSION_ACCESS_FINE_LOCATION,
+            PERMISSION_ACCESS_COARSE_LOCATION,
+            PERMISSION_CALL_PHONE,
+            PERMISSION_CAMERA,
     };
 
     public interface PermissionGrant {
@@ -165,8 +171,6 @@ public class MyPermissionUtils {
         }
 
         if (notGranted.size() == 0) {
-           /* Toast.makeText(activity, "all permission success" + notGranted, Toast.LENGTH_SHORT)
-                    .show();*/
             permissionGrant.onPermissionGranted(CODE_MULTI_PERMISSION);
         } else {
             openSettingActivity(activity, activity.getResources().getString(R.string.no_permission));
@@ -227,8 +231,13 @@ public class MyPermissionUtils {
     private static void showMessageOKCancel(final Activity context, String message, DialogInterface.OnClickListener okListener) {
         new AlertDialog.Builder(context)
                 .setMessage(message)
-                .setPositiveButton("OK", okListener)
-                .setNegativeButton("Cancel", null)
+                .setPositiveButton("确定", okListener)
+                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        context.finish();
+                    }
+                })
                 .create()
                 .show();
 
@@ -286,7 +295,7 @@ public class MyPermissionUtils {
                 Log.e(TAG, "getPackageName(): " + activity.getPackageName());
                 Uri uri = Uri.fromParts("package", activity.getPackageName(), null);
                 intent.setData(uri);
-                activity.startActivity(intent);
+                activity.startActivityForResult(intent,REQUEST_CODE_SETTING);
             }
         });
     }
