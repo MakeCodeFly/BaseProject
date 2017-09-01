@@ -19,51 +19,47 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 /**
  * <pre>
  *     author: MakeCodeFly
  *     desc  : 6.0权限申请帮助类
  *     email:15695947865@139.com
- * </pre>
- * Created by qianxiaoai on 2016/7/7.
- *
  * 使用：
- * MyPermissionUtils.requestMultiPermissions(this,mPermissionGrant);
+ *     MyPermissionUtils.requestMultiPermissions(this,mPermissionGrant);
  *
- *   @Override
-public void onRequestPermissionsResult(final int requestCode, @NonNull String[] permissions,
- @NonNull int[] grantResults) {
- MyPermissionUtils.requestPermissionsResult(this, requestCode, permissions, grantResults, mPermissionGrant);
- }
-
-
- * private MyPermissionUtils.PermissionGrant mPermissionGrant = new MyPermissionUtils.PermissionGrant() {
-@Override
-public void onPermissionGranted(int requestCode) {
-switch (requestCode) {
-case MyPermissionUtils.CODE_MULTI_PERMISSION:
-break;
-default:
-break;
-}
-}
-};
+ *     @Override
+ *     public void onRequestPermissionsResult(final int requestCode, @NonNull String[] permissions,
+ *              @NonNull int[] grantResults) {
+ *                        MyPermissionUtils.requestPermissionsResult(this, requestCode, permissions, grantResults, mPermissionGrant);
+ *                                           }
+ *        private MyPermissionUtils.PermissionGrant mPermissionGrant = new MyPermissionUtils.PermissionGrant() {
+ *       @Override public void onPermissionGranted(int requestCode) {
+ *       switch (requestCode) {
+ *      case MyPermissionUtils.CODE_MULTI_PERMISSION:
+ *      break;
+ *      default:
+ *      break;
+ *      }
+ *     }
+ *    };
  */
 public class MyPermissionUtils {
 
     private static final String TAG = MyPermissionUtils.class.getSimpleName();
-    public static final int CODE_RECORD_AUDIO = 0;
+    public static final int CODE_RECORD_AUDIO = 12;
     public static final int CODE_READ_PHONE_STATE = 1;
     public static final int CODE_CALL_PHONE = 2;
     public static final int CODE_ACCESS_FINE_LOCATION = 3;
     public static final int CODE_ACCESS_COARSE_LOCATION = 4;
     public static final int CODE_READ_EXTERNAL_STORAGE = 5;
     public static final int CODE_WRITE_EXTERNAL_STORAGE = 6;
-    public static final int CODE_READ_CONTACTS= 7;
-    public static final int CODE_WRITE_CONTACTS= 8;
-    public static final int CODE_PROCESS_OUTGOING_CALLS= 9;
-    public static final int CODE_READ_READ_SMS= 10;
-    public static final int CODE_RECEIVE_SMS= 11;
+    public static final int CODE_READ_CONTACTS = 7;
+    public static final int CODE_WRITE_CONTACTS = 8;
+    public static final int CODE_PROCESS_OUTGOING_CALLS = 9;
+    public static final int CODE_READ_READ_SMS = 10;
+    public static final int CODE_RECEIVE_SMS = 11;
+    public static final int CODE_CAMERA = 0;
     public static final int CODE_MULTI_PERMISSION = 100;
 
 
@@ -82,25 +78,13 @@ public class MyPermissionUtils {
     public static final String PERMISSION_READ_SMS = Manifest.permission.READ_SMS;
     public static final String PERMISSION_RECEIVE_SMS = Manifest.permission.RECEIVE_SMS;
     public static final String PERMISSION_SEND_SMS = Manifest.permission.SEND_SMS;
+    public static final String PERMISSION_CAMERA = Manifest.permission.CAMERA;
 
     private static final String[] requestPermissions = {
-            PERMISSION_RECORD_AUDIO,
-            PERMISSION_READ_PHONE_STATE,
-            PERMISSION_CALL_PHONE,
-            READ_PHONE_STATE,
-            PERMISSION_ACCESS_FINE_LOCATION,
-            PERMISSION_ACCESS_COARSE_LOCATION,
-            PERMISSION_READ_EXTERNAL_STORAGE,
-            PERMISSION_WRITE_EXTERNAL_STORAGE,
-            PERMISSION_READ_CONTACTS,
-            PERMISSION_WRITE_CONTACTS,
-            PERMISSION_PROCESS_OUTGOING_CALLS,
-            PERMISSION_READ_SMS,
-            PERMISSION_RECEIVE_SMS,
-            PERMISSION_SEND_SMS,
+            PERMISSION_CAMERA
     };
 
-    public  interface PermissionGrant {
+    public interface PermissionGrant {
         void onPermissionGranted(int requestCode);
     }
 
@@ -229,7 +213,7 @@ public class MyPermissionUtils {
 
     private static void shouldShowRationale(final Activity activity, final int requestCode, final String requestPermission) {
         //TODO
-        showMessageOKCancel(activity, "Rationale: " + activity.getResources().getString(R.string.no_permission), new DialogInterface.OnClickListener() {
+        showMessageOKCancel(activity, activity.getResources().getString(R.string.no_permission), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 ActivityCompat.requestPermissions(activity,

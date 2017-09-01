@@ -24,13 +24,10 @@ import java.util.Map;
 /**
  * @Description:主要功能:UncaughtException处理类,当程序发生Uncaught异常的时候,有该类来接管程序,并记录发送错误报告.
  * @author: MakeCodeFly
- * @date: 2017年08月01日 10:49
- * @Copyright: 个人版权所有
- * @Company:
- * @version: 1.0.0
+ *  email:15695947865@139.com
  */
 
-/*
+/**用法
  * public class AndroidUtilsApplication extends Application {
  * public void onCreate() {
  * super.onCreate();
@@ -114,7 +111,7 @@ public class CrashHandlerUtil implements Thread.UncaughtExceptionHandler {
                 e.printStackTrace();
             }
             //退出程序
-            AppManager.getAppManager().exitApp();
+            AppManagers.getAppManagers().AppExit(mContext,false);
         }
     }
 

@@ -8,9 +8,11 @@ import android.os.Build;
 import java.io.File;
 
 /**
- * 更新管理器
- *
- * Created by MakeCodeFly
+ * <pre>
+ *     author: MakeCodeFly
+ *     desc  : UpdateAPPManager版本更新管理（支持后台下载）
+ *     email:15695947865@139.com
+ * </pre>
  */
 @SuppressWarnings("unused")
 public class UpdateAppManager {

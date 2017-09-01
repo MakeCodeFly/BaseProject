@@ -8,7 +8,11 @@ import java.io.File;
 import java.net.URISyntaxException;
 
 /**
- * Created by Administrator on 2017/7/27.
+ * <pre>
+ *     author: MakeCodeFly
+ *     email:15695947865@139.com
+ *     desc:跳转三方地图Utils
+ * </pre>
  */
 public class AmapUtils {
 

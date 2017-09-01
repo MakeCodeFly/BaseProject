@@ -12,9 +12,8 @@ import java.util.Stack;
 /**
  * 主要功能:Activity的管理
  * @author: MakeCodeFly
- * @date: 2017年08月08日 16:37
- * @Copyright: 个人版权所有
- * @version: 1.0.0
+ * @date: 2017年08月03日 16:37
+ * email:15695947865@139.com
  */
 public class AppManagers {
     private static Stack<Activity> activityStack;
@@ -28,11 +27,11 @@ public class AppManagers {
      */
     public static AppManagers getAppManagers() {
         if (instance == null) {
-            synchronized (AppManager.class){
-                if(instance==null){
+            synchronized (AppManagers.class){
+                if(instance==null)
                     instance = new AppManagers();
+                if (activityStack == null)
                     instance.activityStack = new Stack();
-                }
             }
 
         }

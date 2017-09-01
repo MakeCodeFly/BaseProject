@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * @author MakeCodeFly
  * @version 1.0.0
+ *  email:15695947865@139.com
  * DiffUtil.DiffResult diffResult =
 DiffUtil.calculateDiff(new DiffCallBack(oldDatas, newDatas), true);
 diffResult.dispatchUpdatesTo(mAdapter);
