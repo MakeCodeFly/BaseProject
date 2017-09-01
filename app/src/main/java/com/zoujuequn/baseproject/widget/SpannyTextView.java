@@ -12,10 +12,7 @@ import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.ImageSpan;
 
-/**
- * Spannable wrapper for simple creation of Spannable strings.
- *
- */
+
 public class SpannyTextView extends SpannableStringBuilder {
 
     private int flag = Spannable.SPAN_EXCLUSIVE_EXCLUSIVE;
