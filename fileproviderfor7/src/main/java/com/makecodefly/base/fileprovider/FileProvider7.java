@@ -10,8 +10,26 @@ import android.os.Build;
 import java.io.File;
 import java.util.List;
 
+
 /**
- * Created by zhanghongyang01 on 17/5/31.
+ *
+ * <pre>
+ *     author: MakeCodeFly
+ *     email:15695947865@139.com
+ *     desc:解决android7.0系统以上拍照和apk下载异常问题
+ * </pre>
+ *
+ private void installApk() {
+ // 需要自己修改安装包路径
+ File file = new File(Environment.getExternalStorageDirectory(),
+ "app-debug.apk");
+ Intent intent = new Intent(Intent.ACTION_VIEW);
+ intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+ FileProvider7.setIntentDataAndType(this,
+ intent, "application/vnd.android.package-archive", file, true);
+
+ startActivity(intent);
+ }
  */
 
 public class FileProvider7 {
