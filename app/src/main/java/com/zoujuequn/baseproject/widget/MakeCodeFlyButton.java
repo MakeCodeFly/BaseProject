@@ -15,8 +15,9 @@ import android.util.AttributeSet;
 import com.zoujuequn.baseproject.R;
 
 /**
- * @author MakeCodeFly
- * @time 2017-07-06
+ * author: MakeCodeFly
+ * desc  : 自定义Button  （点击效果以及形状  摆脱重复写drawable文件）
+ * email:15695947865@139.com
  */
 
 public class MakeCodeFlyButton extends AppCompatButton{

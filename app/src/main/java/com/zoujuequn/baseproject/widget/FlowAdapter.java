@@ -7,7 +7,13 @@ import java.util.Arrays;
 import java.util.List;
 
 
-
+/**
+ * <pre>
+ *     author: MakeCodeFly
+ *     desc  : AutoFlowLayoutAdapter
+ *     email:15695947865@139.com
+ * </pre>
+ */
 public abstract class FlowAdapter<T> {
     private List<T> mList;
 

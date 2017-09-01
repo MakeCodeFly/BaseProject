@@ -6,6 +6,11 @@ import android.view.WindowManager;
 import android.widget.VideoView;
 
 /**
+ * <pre>
+ *     author: MakeCodeFly
+ *     email:15695947865@139.com
+ *     desc:背景视频播放控件
+ * </pre>
  */
 public class FullScreenVideoView extends VideoView {
     public FullScreenVideoView(Context context) {

@@ -7,7 +7,11 @@ import android.view.ViewConfiguration;
 import android.widget.ScrollView;
 
 /**
- * Created by Administrator on 2017/7/14.
+ * <pre>
+ *     author: MakeCodeFly
+ *     email:15695947865@139.com
+ *     desc:自定义ScrollView(解决嵌套滑动冲突)
+ * </pre>
  */
 public class CustomScrollView extends ScrollView {
     private int downX;

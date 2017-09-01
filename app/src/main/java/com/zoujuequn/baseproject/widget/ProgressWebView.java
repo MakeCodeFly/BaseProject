@@ -13,9 +13,9 @@ import com.zoujuequn.baseproject.R;
 
 
 /**
- * @author MakeCodeFly
- * @time 2017-07-11
- *
+ * author: MakeCodeFly
+ * desc  : 顶部带进度条的WebView
+ * email:15695947865@139.com
  * 注意：
  *
  * 1. 如果是返回的HTMLCode

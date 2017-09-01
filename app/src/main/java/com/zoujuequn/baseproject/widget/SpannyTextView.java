@@ -4,6 +4,7 @@ package com.zoujuequn.baseproject.widget;
  * @author MakeCodeFly
  * @time 2017-08-01
  * @deprecated TextView不同的颜色大小的文字
+ *  email:15695947865@139.com
  */
 import android.text.Spannable;
 import android.text.SpannableString;

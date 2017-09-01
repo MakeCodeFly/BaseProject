@@ -29,13 +29,10 @@ import java.lang.ref.WeakReference;
 
 /**
  * @Description:主要功能:用于设置文字的前景色、背景色、Typeface、粗体、斜体、字号、超链接、删除线、下划线、上下标等
- * @Prject: CommonUtilLibrary
- * @Package: com.jingewenku.abrahamcaijin.commonutil
- * @author: AbrahamCaiJin
+ *  author: MakeCodeFly
+ *  email:15695947865@139.com
+ *  desc:自定义CustomViewPager
  * @date: 2017年05月19日 13:24
- * @Copyright: 个人版权所有
- * @Company:
- * @version: 1.0.0
  */
 
 public class SpannableStringUtils {

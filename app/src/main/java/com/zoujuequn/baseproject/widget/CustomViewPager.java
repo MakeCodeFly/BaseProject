@@ -6,7 +6,11 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * Created by Administrator on 2017/7/14.
+ * <pre>
+ *     author: MakeCodeFly
+ *     email:15695947865@139.com
+ *     desc:自定义CustomViewPager
+ * </pre>
  */
 public class CustomViewPager extends ViewPager {
 
