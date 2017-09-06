@@ -6,9 +6,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.jph.takephoto.app.TakePhotoActivity;
 import com.zoujuequn.baseproject.R;
 import com.zoujuequn.baseproject.base.BaseFragment;
 import com.zoujuequn.baseproject.ui.SnapHelperActivity;
+import com.zoujuequn.baseproject.ui.account.LoginActivity;
 import com.zoujuequn.baseproject.utils.GlideUtils;
 import com.zoujuequn.baseproject.utils.IntentUtils;
 import com.zoujuequn.baseproject.widget.AnimCheckBox;
@@ -24,6 +26,7 @@ public class HomeFragment extends BaseFragment {
 
 
     private Button button1;
+    private Button button2;
 
     private ImageView mIvRound;
 
@@ -39,12 +42,14 @@ public class HomeFragment extends BaseFragment {
         checkbox.setChecked(true);
         checkbox.setChecked(false, true);
         button1 = getViewById(R.id.button1);
+        button2 = getViewById(R.id.button2);
         mIvRound = getViewById(R.id.iv_round);
 
         GlideUtils.loadRoundViewHolder((Activity) mContext,"http://tupian.enterdesk.com/2013/mxy/12/10/15/10.jpg"
         ,mIvRound,30);
 
         button1.setOnClickListener(this);
+        button2.setOnClickListener(this);
     }
 
     @Override
@@ -58,6 +63,9 @@ public class HomeFragment extends BaseFragment {
             case R.id.button1:
 //                IntentUtils.gotoActivity(mContext, SpanyActivity.class);
                 IntentUtils.gotoActivity(mContext, SnapHelperActivity.class);
+                break;
+            case R.id.button2:
+                IntentUtils.gotoActivity(mContext, LoginActivity.class);
                 break;
         }
     }

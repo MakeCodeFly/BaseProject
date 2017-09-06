@@ -1,11 +1,11 @@
 package com.zoujuequn.baseproject.mvp.basepresenter;
 
-
-
 /**
- * MVP模式中公共的基本契约
- *
- * @version 1.0.0
+ * <pre>
+ *     author: MakeCodeFly
+ *     desc  : MVP模式中公共的基本契约
+ *     email:15695947865@139.com
+ * </pre>
  */
 public interface BaseContract {
     // 基本的界面职责
