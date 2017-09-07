@@ -49,7 +49,7 @@ public class ExamplePresenter extends BasePresenter<ExampleContract.View>
         Network.getInstance().getRequestCall(URLConfig.URL_GETINDEXBANNERLIST, paramsMap, new DataSource.Callback<CallResponse>() {
             @Override
             public void onDataResponseFailed(String strRes) {
-
+                mExampleContractView.showError(strRes);
             }
 
             @Override
@@ -72,7 +72,7 @@ public class ExamplePresenter extends BasePresenter<ExampleContract.View>
         Network.getInstance().getRequestCall(URLConfig.URL_GETINDEXBANNERLIST, paramsMap, new DataSource.Callback<CallResponse>() {
             @Override
             public void onDataResponseFailed(String strRes) {
-
+                mExampleContractView.showError(strRes);
             }
 
             @Override
@@ -88,7 +88,7 @@ public class ExamplePresenter extends BasePresenter<ExampleContract.View>
 
     @Override
     public void onDataResponseFailed(String strRes) {
-
+        mExampleContractView.showError(strRes);
     }
 
     @Override
